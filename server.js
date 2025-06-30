@@ -71,6 +71,7 @@ app.post('/login', async (req, res) => {
       email: user.email,
     });
   } catch (error) {
+    console.error('Erro ao criar usuário:', error);
     res.status(500).json({ error: 'Erro no login.', detalhes: error.message });
   }
 });
